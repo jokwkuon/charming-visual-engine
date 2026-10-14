@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActivitiesRouteImport } from './routes/activities'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as DocumentsRouteImport } from './routes/documents'
+import { Route as GivingRouteImport } from './routes/giving'
+import { Route as InterestsRouteImport } from './routes/interests'
+import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as MentorshipRouteImport } from './routes/mentorship'
+import { Route as OrganizationsRouteImport } from './routes/organizations'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as SettingsRouteImport } from './routes/settings'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitiesRoute = ActivitiesRouteImport.update({
+  id: '/activities',
+  path: '/activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GivingRoute = GivingRouteImport.update({
+  id: '/giving',
+  path: '/giving',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterestsRoute = InterestsRouteImport.update({
+  id: '/interests',
+  path: '/interests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorshipRoute = MentorshipRouteImport.update({
+  id: '/mentorship',
+  path: '/mentorship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizationsRoute = OrganizationsRouteImport.update({
+  id: '/organizations',
+  path: '/organizations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/contacts': typeof ContactsRoute
+  '/documents': typeof DocumentsRoute
+  '/giving': typeof GivingRoute
+  '/interests': typeof InterestsRoute
+  '/membership': typeof MembershipRoute
+  '/mentorship': typeof MentorshipRoute
+  '/organizations': typeof OrganizationsRoute
+  '/programs': typeof ProgramsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/contacts': typeof ContactsRoute
+  '/documents': typeof DocumentsRoute
+  '/giving': typeof GivingRoute
+  '/interests': typeof InterestsRoute
+  '/membership': typeof MembershipRoute
+  '/mentorship': typeof MentorshipRoute
+  '/organizations': typeof OrganizationsRoute
+  '/programs': typeof ProgramsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/contacts': typeof ContactsRoute
+  '/documents': typeof DocumentsRoute
+  '/giving': typeof GivingRoute
+  '/interests': typeof InterestsRoute
+  '/membership': typeof MembershipRoute
+  '/mentorship': typeof MentorshipRoute
+  '/organizations': typeof OrganizationsRoute
+  '/programs': typeof ProgramsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/activities'
+    | '/contacts'
+    | '/documents'
+    | '/giving'
+    | '/interests'
+    | '/membership'
+    | '/mentorship'
+    | '/organizations'
+    | '/programs'
+    | '/reports'
+    | '/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/activities'
+    | '/contacts'
+    | '/documents'
+    | '/giving'
+    | '/interests'
+    | '/membership'
+    | '/mentorship'
+    | '/organizations'
+    | '/programs'
+    | '/reports'
+    | '/settings'
+  id:
+    | '__root__'
+    | '/'
+    | '/activities'
+    | '/contacts'
+    | '/documents'
+    | '/giving'
+    | '/interests'
+    | '/membership'
+    | '/mentorship'
+    | '/organizations'
+    | '/programs'
+    | '/reports'
+    | '/settings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActivitiesRoute: typeof ActivitiesRoute
+  ContactsRoute: typeof ContactsRoute
+  DocumentsRoute: typeof DocumentsRoute
+  GivingRoute: typeof GivingRoute
+  InterestsRoute: typeof InterestsRoute
+  MembershipRoute: typeof MembershipRoute
+  MentorshipRoute: typeof MentorshipRoute
+  OrganizationsRoute: typeof OrganizationsRoute
+  ProgramsRoute: typeof ProgramsRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activities': {
+      id: '/activities'
+      path: '/activities'
+      fullPath: '/activities'
+      preLoaderRoute: typeof ActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/giving': {
+      id: '/giving'
+      path: '/giving'
+      fullPath: '/giving'
+      preLoaderRoute: typeof GivingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interests': {
+      id: '/interests'
+      path: '/interests'
+      fullPath: '/interests'
+      preLoaderRoute: typeof InterestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentorship': {
+      id: '/mentorship'
+      path: '/mentorship'
+      fullPath: '/mentorship'
+      preLoaderRoute: typeof MentorshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organizations': {
+      id: '/organizations'
+      path: '/organizations'
+      fullPath: '/organizations'
+      preLoaderRoute: typeof OrganizationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActivitiesRoute: ActivitiesRoute,
+  ContactsRoute: ContactsRoute,
+  DocumentsRoute: DocumentsRoute,
+  GivingRoute: GivingRoute,
+  InterestsRoute: InterestsRoute,
+  MembershipRoute: MembershipRoute,
+  MentorshipRoute: MentorshipRoute,
+  OrganizationsRoute: OrganizationsRoute,
+  ProgramsRoute: ProgramsRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
