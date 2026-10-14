@@ -46,7 +46,7 @@ export function Card({ children, className = "" }: { children: ReactNode; classN
   return <div className={`rounded-2xl border bg-card p-5 shadow-sm ${className}`}>{children}</div>;
 }
 
-export function Kpi({ label, value, hint, tone }: { label: string; value: string; hint?: string; tone?: Tone }) {
+export function Kpi({ label, value, hint, tone }: { label: string; value: string; hint?: string | undefined; tone?: Tone | undefined }) {
   return (
     <Card>
       <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</p>
